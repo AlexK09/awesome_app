@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: awesome_front
+  name: awesome-front
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: awesome_front
+      app: awesome-front
   template:
     metadata:
       labels:
-        app: awesome_front
+        app: awesome-front
     spec:
       containers:
-        - name: awesome_front
+        - name: awesome-front
           image: nginx:latest
           ports:
             - containerPort: 80
           volumeMounts:
             - mountPath: /usr/share/nginx/html
-              name: awesome_front_volume
+              name: awesome-front-volume
       volumes:
-        - name: awesome_front_volume
+        - name: awesome-front-volume
           hostPath:
             path: /opt/

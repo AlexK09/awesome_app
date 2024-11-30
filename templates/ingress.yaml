@@ -5,13 +5,13 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: awesome_front
+    - host: awesome-front
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: awesome_front
+                name: awesome-front
                 port:
                   number: 80
