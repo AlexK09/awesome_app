@@ -18,7 +18,7 @@ spec:
           ports:
             - containerPort: 80
           volumeMounts:
-            - mountPath: /app/
+            - mountPath: /usr/share/nginx/html
               name: awesome_front_volume
       volumes:
         - name: awesome_front_volume
