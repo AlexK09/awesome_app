@@ -1,0 +1,7 @@
+image:
+  repository: docker.io/hackcoonam8ata/awesome_app
+  tag: latest
+
+databaseName: postgres
+databaseUser: postgres
+databasePassword: password

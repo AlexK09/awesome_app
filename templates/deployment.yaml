@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: awesome_app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: awesome_app
+  template:
+    metadata:
+      labels:
+        app: awesome_app
+    spec:
+      containers:
+        - name: awesome_app
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - mountPath: /app/
+              name: awesome_app_volume
+      volumes:
+        - name: awesome_app_volume
+          hostPath:
+            path: /opt/

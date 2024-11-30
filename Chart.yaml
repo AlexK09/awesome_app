@@ -1,0 +1,4 @@
+apiVersion: v2
+name: xpaste
+description: A Helm chart for deploying XPaste application and PostgreSQL database
+version: 0.1.0
