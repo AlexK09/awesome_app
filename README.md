@@ -1,1 +1,3 @@
-# awesome_app
+INSTALLATION
+
+helm install awesomeapp ./awesome_app
