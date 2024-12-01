@@ -1,9 +1,8 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
   name: awesome-app
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: awesome-app
@@ -17,6 +16,9 @@ spec:
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           ports:
             - containerPort: 8000
+          securityContext:
+            privileged: true
+            allowPrivilegeEscalation: true
           volumeMounts:
             - mountPath: /board/
               name: awesome-app-volume

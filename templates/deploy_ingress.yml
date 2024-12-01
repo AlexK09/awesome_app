@@ -1,17 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: awesomefront-ingress
+  name: awesomeapp-ingress
 spec:
   ingressClassName: nginx
   rules:
-    - host: awesome-front.stud.test
+    - host: awesome-app.stud.test
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: awesome-front
+                name: awesome-app
                 port:
-                  number: 80
+                  number: 8000

@@ -14,7 +14,10 @@ spec:
     spec:
       containers:
         - name: awesome-front
-          image: nginx:latest
+          image: docker.io/hackcoonam8ata/nginx:latest
+          securityContext:
+            privileged: true
+            allowPrivilegeEscalation: true
           ports:
             - containerPort: 80
           volumeMounts:
